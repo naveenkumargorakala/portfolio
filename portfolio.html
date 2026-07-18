@@ -1,215 +1,1229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gorakala Naveen Kumar | Portfolio</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f5f7;
-      color: #2c2c2c;
-      line-height: 1.6;
-    }
-    header {
-      background: #1e2a38;
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.3rem;
-    }
-    header p {
-      font-size: 1.1rem;
-    }
-    nav {
-      background: #14202c;
-      padding: 0.6rem;
-      text-align: center;
-    }
-    nav a {
-      color: #e0e0e0;
-      margin: 0 0.8rem;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #90e0ef;
-    }
-    section {
-      max-width: 950px;
-      margin: 1.5rem auto;
-      padding: 1rem 1.5rem;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 3px 5px rgba(0,0,0,0.08);
-    }
-    section h2 {
-      margin-bottom: 0.6rem;
-      color: #1e2a38;
-      border-bottom: 2px solid #90e0ef;
-      display: inline-block;
-      padding-bottom: 0.2rem;
-      font-size: 1.3rem;
-    }
-    ul {
-      margin-left: 1.2rem;
-    }
-    .experience, .project {
-      margin-bottom: 1rem;
-    }
-    .experience h3, .project h3 {
-      font-size: 1.05rem;
-      color: #14202c;
-    }
-    footer {
-      background: #14202c;
-      color: #ccc;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 1rem;
-    }
-    footer h2 {
-      color: #90e0ef;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-    .connect-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-    }
-    .connect-links a {
-      display: inline-block;
-      background: #1e2a38;
-      color: #fff;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: 0.3s;
-    }
-    .connect-links a i {
-      margin-right: 6px;
-    }
-    .connect-links a:hover {
-      background: #0077b6;
-    }
-    .copyright {
-      margin-top: 1.2rem;
-      font-size: 0.85rem;
-      color: #aaa;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naveen Kumar Gorakala — Java Backend Developer</title>
+<meta name="description" content="Naveen Kumar Gorakala — Java Backend Developer. Spring Boot, Microservices, Kafka, Distributed Systems. 3+ years building fintech and banking platforms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#05060d;
+  --deep:#0a0d1c;
+  --panel:#0e1226;
+  --glass:rgba(18,22,45,0.55);
+  --glass-border:rgba(140,160,255,0.14);
+  --blue:#4fd1ff;
+  --blue-dim:#2a86b8;
+  --purple:#9d6bff;
+  --purple-dim:#6a45c9;
+  --gold:#f5c56b;
+  --mist:#c9d3ee;
+  --mist-dim:#7f8ab0;
+  --white:#f4f6ff;
+  --danger:#ff6b7a;
+  --font-display:'Rajdhani',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-jp:'Noto Sans JP',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--void);
+  color:var(--mist);
+  font-family:var(--font-body);
+  overflow-x:hidden;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--purple);color:var(--white);}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:var(--void);}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--blue),var(--purple));border-radius:4px;}
+
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+img{max-width:100%;display:block;}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
+}
+
+/* ===== Backgrounds (fixed, shared) ===== */
+#bg-stars, #bg-particles, #bg-sakura{
+  position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;
+}
+.bg-vignette{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 30%, transparent 0%, rgba(5,6,13,0.35) 60%, rgba(5,6,13,0.92) 100%);
+}
+.bg-grain{
+  position:fixed;inset:0;z-index:2;pointer-events:none;opacity:0.035;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+main{position:relative;z-index:3;}
+
+/* ===== HUD (signature element) ===== */
+#hud{
+  position:fixed;
+  right:18px;top:50%;
+  transform:translateY(-50%);
+  z-index:60;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  font-family:var(--font-mono);
+}
+#hud .ring{
+  position:relative;width:56px;height:56px;
+}
+#hud .ring svg{transform:rotate(-90deg);}
+#hud .ring circle{fill:none;stroke-width:2.5;}
+#hud .ring .track{stroke:rgba(140,160,255,0.15);}
+#hud .ring .fill{stroke:url(#hudGrad);stroke-linecap:round;transition:stroke-dashoffset 0.15s linear;}
+#hud .ring .pct{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:var(--blue);font-weight:600;
+}
+#hud .ep{
+  writing-mode:vertical-rl;
+  font-family:var(--font-jp);
+  font-size:11px;letter-spacing:2px;
+  color:var(--mist-dim);
+  padding:6px 4px;
+  border-left:1px solid var(--glass-border);
+}
+#hud .ep b{color:var(--blue);display:block;font-family:var(--font-mono);font-size:10px;margin-bottom:4px;}
+@media (max-width:860px){ #hud{display:none;} }
+
+/* ===== Music toggle ===== */
+#music-toggle{
+  position:fixed;left:18px;bottom:18px;z-index:60;
+  width:46px;height:46px;border-radius:50%;
+  background:var(--glass);border:1px solid var(--glass-border);
+  backdrop-filter:blur(10px);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--blue);font-size:18px;
+  transition:box-shadow 0.3s,transform 0.3s;
+}
+#music-toggle:hover{box-shadow:0 0 20px rgba(79,209,255,0.4);transform:scale(1.06);}
+#music-toggle.on{color:var(--gold);box-shadow:0 0 16px rgba(245,197,107,0.35);}
+#music-toggle .bars{display:flex;gap:2px;align-items:flex-end;height:14px;}
+#music-toggle .bars span{width:2px;background:currentColor;border-radius:1px;height:4px;}
+#music-toggle.on .bars span{animation:eq 0.8s ease-in-out infinite;}
+#music-toggle.on .bars span:nth-child(2){animation-delay:0.15s;}
+#music-toggle.on .bars span:nth-child(3){animation-delay:0.3s;}
+@keyframes eq{0%,100%{height:4px;}50%{height:14px;}}
+
+/* ===== Scene chapter label ===== */
+.chapter{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:48px;
+}
+.chapter .num{
+  font-family:var(--font-mono);font-size:13px;color:var(--blue);
+  border:1px solid rgba(79,209,255,0.35);border-radius:20px;
+  padding:5px 14px;letter-spacing:1px;
+  background:rgba(79,209,255,0.06);
+}
+.chapter .jp{font-family:var(--font-jp);font-size:13px;color:var(--mist-dim);letter-spacing:1px;}
+.chapter .line{flex:1;height:1px;background:linear-gradient(90deg,rgba(157,107,255,0.5),transparent);}
+
+.section{
+  position:relative;
+  padding:120px 6vw;
+  max-width:1280px;
+  margin:0 auto;
+}
+.section-title{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(32px,5vw,58px);
+  color:var(--white);
+  letter-spacing:0.5px;
+  margin-bottom:8px;
+  text-shadow:0 0 30px rgba(79,209,255,0.25);
+}
+.section-sub{
+  font-size:16px;color:var(--mist-dim);
+  max-width:640px;margin-bottom:56px;
+}
+
+.reveal{opacity:0;transform:translateY(34px);transition:opacity 0.8s cubic-bezier(.2,.7,.3,1),transform 0.8s cubic-bezier(.2,.7,.3,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-l{opacity:0;transform:translateX(-60px);transition:opacity 0.8s cubic-bezier(.2,.7,.3,1),transform 0.8s cubic-bezier(.2,.7,.3,1);}
+.reveal-l.in{opacity:1;transform:translateX(0);}
+.reveal-r{opacity:0;transform:translateX(60px);transition:opacity 0.8s cubic-bezier(.2,.7,.3,1),transform 0.8s cubic-bezier(.2,.7,.3,1);}
+.reveal-r.in{opacity:1;transform:translateX(0);}
+.reveal-scale{opacity:0;transform:scale(0.85);transition:opacity 0.7s ease,transform 0.7s cubic-bezier(.34,1.56,.64,1);}
+.reveal-scale.in{opacity:1;transform:scale(1);}
+
+.glass{
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  border-radius:18px;
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+
+/* ===================== HERO ===================== */
+#hero{
+  position:relative;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:0 6vw;overflow:hidden;
+}
+.skyline{
+  position:absolute;bottom:0;left:0;width:100%;height:38vh;z-index:2;pointer-events:none;
+}
+.hero-eyebrow{
+  font-family:var(--font-jp);font-size:13px;letter-spacing:4px;color:var(--blue);
+  margin-bottom:18px;opacity:0;animation:fadeUp 1s ease forwards 0.2s;
+}
+.hero-hello{
+  font-family:var(--font-display);font-weight:600;font-size:clamp(18px,2.4vw,26px);
+  color:var(--mist-dim);letter-spacing:2px;margin-bottom:6px;
+  opacity:0;animation:fadeUp 1s ease forwards 0.4s;
+}
+#hero-name{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(44px,9vw,110px);
+  letter-spacing:1px;line-height:1;
+  background:linear-gradient(120deg,var(--white) 20%,var(--blue) 55%,var(--purple) 85%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 40px rgba(79,209,255,0.35));
+  margin-bottom:20px;
+}
+#hero-name .ch{display:inline-block;opacity:0;transform:translateY(40px) rotateX(-40deg);animation:letterIn 0.7s cubic-bezier(.2,.9,.3,1.2) forwards;}
+@keyframes letterIn{to{opacity:1;transform:translateY(0) rotateX(0);}}
+.hero-role{
+  font-family:var(--font-display);font-weight:600;font-size:clamp(18px,2.6vw,30px);
+  color:var(--white);letter-spacing:1px;margin-bottom:22px;
+  opacity:0;animation:fadeUp 1s ease forwards 1.6s;
+}
+.hero-role .accent{color:var(--blue);}
+#hero-typing{
+  font-family:var(--font-mono);font-size:clamp(14px,1.8vw,19px);color:var(--mist);
+  min-height:28px;margin-bottom:44px;
+  opacity:0;animation:fadeUp 1s ease forwards 1.9s;
+}
+#hero-typing .caret{display:inline-block;width:2px;height:1em;background:var(--blue);margin-left:3px;vertical-align:-3px;animation:blink 0.9s steps(1) infinite;}
+@keyframes blink{50%{opacity:0;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+
+.cta-btn{
+  position:relative;display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--font-display);font-weight:600;font-size:16px;letter-spacing:1px;
+  color:var(--void);background:linear-gradient(120deg,var(--blue),var(--purple));
+  padding:16px 34px;border-radius:100px;border:none;
+  box-shadow:0 0 0 1px rgba(79,209,255,0.4),0 8px 30px rgba(79,209,255,0.25);
+  opacity:0;animation:fadeUp 1s ease forwards 2.3s;
+  transition:transform 0.35s cubic-bezier(.2,.9,.3,1.2),box-shadow 0.35s;
+}
+.cta-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 0 1px rgba(79,209,255,0.6),0 14px 40px rgba(157,107,255,0.4);}
+.cta-btn:active{transform:translateY(0) scale(0.98);}
+.scroll-hint{
+  position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+  font-family:var(--font-mono);font-size:11px;color:var(--mist-dim);letter-spacing:2px;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  opacity:0;animation:fadeUp 1s ease forwards 2.8s;
+}
+.scroll-hint .stick{width:1px;height:34px;background:linear-gradient(var(--blue),transparent);position:relative;overflow:hidden;}
+.scroll-hint .stick::after{content:'';position:absolute;top:-34px;left:0;width:100%;height:34px;background:linear-gradient(var(--blue),transparent);animation:dripDown 1.6s ease-in-out infinite;}
+@keyframes dripDown{to{top:34px;}}
+
+/* ===================== PROFILE ===================== */
+.profile-grid{
+  display:grid;grid-template-columns:280px 1fr;gap:70px;align-items:start;
+}
+@media (max-width:820px){.profile-grid{grid-template-columns:1fr;gap:40px;}}
+.avatar-wrap{
+  position:relative;width:240px;height:240px;margin:0 auto;
+}
+.avatar-ring{
+  position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 0deg,var(--blue),var(--purple),var(--blue));
+  animation:spin 8s linear infinite;
+  filter:blur(0.3px);
+}
+.avatar-ring::before{content:'';position:absolute;inset:6px;border-radius:50%;background:var(--void);}
+@keyframes spin{to{transform:rotate(360deg);}}
+.avatar-core{
+  position:absolute;inset:16px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 35% 30%,#1a2350,var(--panel));
+  font-family:var(--font-display);font-weight:700;font-size:64px;color:var(--white);
+  box-shadow:inset 0 0 40px rgba(79,209,255,0.25);
+}
+.avatar-glow{
+  position:absolute;inset:-24px;border-radius:50%;
+  box-shadow:0 0 60px 10px rgba(79,209,255,0.18);
+  animation:pulse 3s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:0.6;}50%{opacity:1;}}
+.avatar-tag{
+  text-align:center;margin-top:22px;font-family:var(--font-mono);font-size:12px;color:var(--blue);letter-spacing:1px;
+}
+.summary-lines p{
+  font-size:clamp(15px,1.6vw,18px);color:var(--mist);margin-bottom:20px;max-width:680px;
+}
+.summary-lines strong{color:var(--white);font-weight:600;}
+.summary-lines .hl{color:var(--blue);}
+
+/* ===================== TIMELINE ===================== */
+.timeline{position:relative;padding-left:0;}
+.timeline-line{
+  position:absolute;left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%);
+  background:linear-gradient(var(--blue),var(--purple));
+  box-shadow:0 0 12px rgba(79,209,255,0.6);
+}
+.timeline-progress{
+  position:absolute;left:50%;top:0;width:2px;transform:translateX(-50%);
+  background:var(--white);height:0;box-shadow:0 0 16px 3px var(--blue);
+  transition:height 0.1s linear;
+}
+@media (max-width:820px){.timeline-line,.timeline-progress{left:18px;}}
+
+.tl-item{position:relative;display:grid;grid-template-columns:1fr 60px 1fr;align-items:start;margin-bottom:90px;}
+@media (max-width:820px){.tl-item{grid-template-columns:36px 1fr;padding-left:0;}}
+.tl-dot{
+  grid-column:2;justify-self:center;margin-top:8px;
+  width:18px;height:18px;border-radius:50%;
+  background:var(--void);border:2px solid var(--blue);
+  box-shadow:0 0 0 6px rgba(79,209,255,0.12),0 0 20px rgba(79,209,255,0.5);
+  position:relative;z-index:2;
+}
+@media (max-width:820px){.tl-dot{grid-column:1;margin-top:6px;}}
+.tl-card{grid-column:1;padding:28px 26px;}
+.tl-item:nth-child(even) .tl-card{grid-column:3;}
+@media (max-width:820px){.tl-item .tl-card,.tl-item:nth-child(even) .tl-card{grid-column:2;}}
+.tl-card{position:relative;}
+.tl-role{font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--white);margin-bottom:2px;}
+.tl-company{color:var(--blue);font-weight:600;font-size:15px;margin-bottom:10px;}
+.tl-meta{display:flex;flex-wrap:wrap;gap:10px;font-family:var(--font-mono);font-size:11.5px;color:var(--mist-dim);margin-bottom:16px;}
+.tl-meta span{border:1px solid var(--glass-border);border-radius:20px;padding:3px 10px;}
+.tl-list{list-style:none;margin-bottom:16px;}
+.tl-list li{position:relative;padding-left:18px;margin-bottom:9px;font-size:14.5px;color:var(--mist);}
+.tl-list li::before{content:'▹';position:absolute;left:0;color:var(--purple);}
+.tl-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.tl-tags span{
+  font-family:var(--font-mono);font-size:11px;color:var(--blue);
+  background:rgba(79,209,255,0.08);border:1px solid rgba(79,209,255,0.25);
+  padding:3px 9px;border-radius:6px;
+}
+
+/* ===================== SKILLS ===================== */
+.skill-tier-label{
+  font-family:var(--font-mono);font-size:12px;color:var(--gold);letter-spacing:2px;
+  margin:44px 0 18px;text-transform:uppercase;
+}
+.skill-tier-label:first-of-type{margin-top:0;}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;}
+.skill-card{
+  padding:18px 20px;position:relative;overflow:hidden;
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+.skill-card.locked{opacity:0.35;filter:grayscale(0.6);}
+.skill-card.unlocked{opacity:1;filter:none;box-shadow:0 0 24px rgba(79,209,255,0.08);}
+.skill-card:hover{transform:translateY(-4px);}
+.skill-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+.skill-name{font-family:var(--font-display);font-weight:600;font-size:17px;color:var(--white);}
+.skill-since{font-family:var(--font-mono);font-size:10.5px;color:var(--mist-dim);}
+.skill-bar-track{height:6px;border-radius:4px;background:rgba(140,160,255,0.12);overflow:hidden;}
+.skill-bar-fill{height:100%;width:0%;border-radius:4px;background:linear-gradient(90deg,var(--blue),var(--purple));transition:width 1.1s cubic-bezier(.2,.8,.3,1);box-shadow:0 0 10px rgba(79,209,255,0.6);}
+.skill-card.unlocked .skill-bar-fill{width:var(--pct);}
+
+/* ===================== PROJECT ===================== */
+.mission-card{
+  position:relative;padding:0;overflow:hidden;
+}
+.mission-head{
+  padding:34px 34px 24px;
+  border-bottom:1px solid var(--glass-border);
+  display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;
+}
+.mission-badge{
+  font-family:var(--font-mono);font-size:11px;color:var(--gold);
+  border:1px solid rgba(245,197,107,0.4);border-radius:20px;padding:4px 12px;
+  background:rgba(245,197,107,0.07);
+}
+.mission-title{font-family:var(--font-display);font-weight:700;font-size:30px;color:var(--white);margin:10px 0 6px;}
+.mission-sub{color:var(--mist-dim);font-size:14px;}
+.mission-body{padding:30px 34px 34px;display:grid;grid-template-columns:1fr 1fr;gap:34px;}
+@media (max-width:760px){.mission-body{grid-template-columns:1fr;}}
+.mission-block h4{
+  font-family:var(--font-mono);font-size:12px;color:var(--blue);letter-spacing:1.5px;
+  text-transform:uppercase;margin-bottom:10px;
+}
+.mission-block p, .mission-block li{font-size:14.5px;color:var(--mist);}
+.mission-block ul{list-style:none;}
+.mission-block li{position:relative;padding-left:16px;margin-bottom:8px;}
+.mission-block li::before{content:'✦';position:absolute;left:0;color:var(--purple);font-size:11px;top:3px;}
+.mission-tech{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px;}
+.mission-tech span{font-family:var(--font-mono);font-size:11px;color:var(--blue);background:rgba(79,209,255,0.08);border:1px solid rgba(79,209,255,0.25);padding:3px 9px;border-radius:6px;}
+.mission-impact{
+  grid-column:1/-1;margin-top:6px;padding:18px 20px;border-radius:12px;
+  background:linear-gradient(120deg,rgba(79,209,255,0.08),rgba(157,107,255,0.08));
+  border:1px solid var(--glass-border);
+}
+
+/* ===================== ACHIEVEMENTS ===================== */
+.badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
+.badge{
+  padding:22px 18px;text-align:center;position:relative;
+}
+.badge-icon{
+  width:52px;height:52px;border-radius:50%;margin:0 auto 14px;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle,rgba(79,209,255,0.18),transparent 70%);
+  border:1.5px solid var(--blue);color:var(--blue);font-size:22px;font-weight:700;
+  position:relative;
+}
+.badge.burst .badge-icon::after{
+  content:'';position:absolute;inset:-14px;border-radius:50%;
+  border:2px solid var(--gold);opacity:0;
+  animation:burst 0.7s ease-out;
+}
+@keyframes burst{0%{opacity:0.9;transform:scale(0.4);}100%{opacity:0;transform:scale(2.1);}}
+.badge-title{font-family:var(--font-display);font-weight:600;font-size:14.5px;color:var(--white);margin-bottom:4px;}
+.badge-desc{font-size:12px;color:var(--mist-dim);}
+
+/* ===================== CONSTELLATION ===================== */
+#constellation-wrap{position:relative;height:560px;}
+#constellation{width:100%;height:100%;}
+.star-node{cursor:pointer;}
+.star-node circle{transition:r 0.3s,filter 0.3s;}
+.star-node:hover circle{filter:drop-shadow(0 0 8px var(--blue));}
+.star-label{font-family:var(--font-mono);font-size:11px;fill:var(--mist-dim);pointer-events:none;}
+#tech-info{
+  position:absolute;right:0;top:0;width:280px;padding:22px;
+  display:none;
+}
+#tech-info.show{display:block;}
+#tech-info h4{font-family:var(--font-display);font-size:20px;color:var(--white);margin-bottom:8px;}
+#tech-info p{font-size:13.5px;color:var(--mist);margin-bottom:10px;}
+#tech-info .ti-meta{font-family:var(--font-mono);font-size:11px;color:var(--blue);}
+@media (max-width:820px){#constellation-wrap{height:auto;}#tech-info{position:static;width:100%;margin-top:20px;}}
+
+/* ===================== COUNTERS ===================== */
+.counter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px;}
+.counter-card{padding:28px 20px;text-align:center;}
+.counter-num{font-family:var(--font-display);font-weight:700;font-size:44px;color:var(--white);
+  background:linear-gradient(120deg,var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.counter-label{font-size:12.5px;color:var(--mist-dim);margin-top:6px;letter-spacing:0.5px;}
+
+/* ===================== RECRUITER ===================== */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;}
+.why-card{
+  padding:28px 24px;position:relative;
+  border:1px solid var(--glass-border);
+}
+.why-card::before{
+  content:'';position:absolute;inset:0;border-radius:18px;padding:1px;
+  background:linear-gradient(120deg,var(--blue),transparent 40%,var(--purple));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:0;transition:opacity 0.4s;
+}
+.why-card:hover::before{opacity:1;}
+.why-icon{font-size:24px;margin-bottom:14px;color:var(--blue);}
+.why-title{font-family:var(--font-display);font-weight:600;font-size:18px;color:var(--white);margin-bottom:8px;}
+.why-desc{font-size:13.5px;color:var(--mist-dim);}
+
+/* ===================== RESUME / CONTACT ===================== */
+.resume-card{padding:44px;text-align:center;max-width:640px;margin:0 auto;}
+.resume-card h3{font-family:var(--font-display);font-size:26px;color:var(--white);margin-bottom:10px;}
+.resume-card p{color:var(--mist-dim);font-size:14.5px;margin-bottom:30px;}
+.resume-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+.rbtn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-display);font-weight:600;font-size:14.5px;letter-spacing:0.5px;
+  padding:12px 22px;border-radius:10px;border:1px solid var(--glass-border);
+  background:rgba(255,255,255,0.03);color:var(--mist);
+  transition:all 0.3s;
+}
+.rbtn:hover{border-color:var(--blue);color:var(--white);box-shadow:0 0 18px rgba(79,209,255,0.2);transform:translateY(-2px);}
+.rbtn.primary{background:linear-gradient(120deg,var(--blue),var(--purple));color:var(--void);border:none;}
+.rbtn.placeholder{border-style:dashed;opacity:0.6;}
+.rbtn.placeholder .tag{font-family:var(--font-mono);font-size:9px;color:var(--gold);margin-left:4px;}
+
+/* ===================== FINAL ===================== */
+#final{
+  min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:0 6vw;position:relative;
+}
+.final-quote{
+  font-family:var(--font-display);font-weight:600;font-size:clamp(20px,3vw,32px);
+  color:var(--white);max-width:760px;margin-bottom:14px;line-height:1.5;
+}
+.final-quote .hl{color:var(--blue);}
+.final-sub{font-size:15px;color:var(--mist-dim);margin-bottom:50px;}
+.tbc{
+  font-family:var(--font-jp);font-weight:700;font-size:clamp(28px,4vw,44px);
+  letter-spacing:3px;color:var(--white);
+  background:linear-gradient(120deg,var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:60px;
+}
+.credits{font-family:var(--font-mono);font-size:12px;color:var(--mist-dim);line-height:2.4;}
+.credits b{color:var(--mist);font-weight:600;}
+footer{padding:40px 6vw 60px;text-align:center;font-family:var(--font-mono);font-size:11px;color:var(--mist-dim);}
+
+/* nav dots */
+#navdots{
+  position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:60;
+  display:flex;flex-direction:column;gap:12px;
+}
+#navdots a{width:8px;height:8px;border-radius:50%;background:rgba(140,160,255,0.25);display:block;transition:all 0.3s;}
+#navdots a.active{background:var(--blue);box-shadow:0 0 10px var(--blue);transform:scale(1.4);}
+@media (max-width:860px){#navdots{display:none;}}
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Gorakala Naveen Kumar</h1>
-    <p>Software Engineer | Fintech | Java & Microservices Specialist</p>
-  </header>
+<canvas id="bg-stars"></canvas>
+<canvas id="bg-particles"></canvas>
+<canvas id="bg-sakura"></canvas>
+<div class="bg-vignette"></div>
+<div class="bg-grain"></div>
 
-  <nav>
-    <a href="#summary">Summary</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-  </nav>
+<nav id="navdots">
+  <a href="#hero" class="navdot" data-i="0"></a>
+  <a href="#profile" class="navdot" data-i="1"></a>
+  <a href="#timeline" class="navdot" data-i="2"></a>
+  <a href="#skills" class="navdot" data-i="3"></a>
+  <a href="#project" class="navdot" data-i="4"></a>
+  <a href="#achievements" class="navdot" data-i="5"></a>
+  <a href="#universe" class="navdot" data-i="6"></a>
+  <a href="#stats" class="navdot" data-i="7"></a>
+  <a href="#hire" class="navdot" data-i="8"></a>
+  <a href="#resume" class="navdot" data-i="9"></a>
+</nav>
 
-  <section id="summary">
-    <h2>Summary</h2>
-    <p>
-      IT professional with 3 years of experience developing, enhancing, and implementing web-based applications.
-      Skilled in writing clean, maintainable Java code and proficient with frameworks like Spring Boot,
-      Hibernate, and Spring Cloud. Experienced in scalable microservices architecture, caching, messaging,
-      and frontend development using Angular.
-    </p>
-  </section>
+<div id="hud">
+  <svg width="0" height="0"><defs><linearGradient id="hudGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4fd1ff"/><stop offset="100%" stop-color="#9d6bff"/></linearGradient></defs></svg>
+  <div class="ring">
+    <svg viewBox="0 0 56 56"><circle class="track" cx="28" cy="28" r="24"/><circle class="fill" id="hudRingFill" cx="28" cy="28" r="24" stroke-dasharray="150.8" stroke-dashoffset="150.8"/></svg>
+    <div class="pct" id="hudPct">0%</div>
+  </div>
+  <div class="ep"><b id="hudChapter">01</b>進行中</div>
+</div>
 
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Languages:</strong> Java 8+, Groovy, HTML5, CSS3</li>
-      <li><strong>Frameworks:</strong> Spring Boot, Spring Cloud, Hibernate, JPA, Angular, REST APIs, Grails</li>
-      <li><strong>Databases & Tools:</strong> Oracle DB, MongoDB, Tomcat, Maven, Gradle, Git, GitLab, Postman</li>
-      <li><strong>Caching & Messaging:</strong> HazelCast, Kafka</li>
-      <li><strong>Other Tools:</strong> JUnit, Swagger, Log4J, Linux</li>
-    </ul>
-  </section>
+<button id="music-toggle" aria-label="Toggle ambient music" title="Ambient theme (visual only — no audio file attached)">
+  <div class="bars"><span></span><span></span><span></span></div>
+</button>
 
-  <section id="experience">
-    <h2>Professional Experience</h2>
+<main>
 
-    <div class="experience">
-      <h3>Software Engineer – Perfios, Mumbai</h3>
-      <p><em>Oct 2023 – Present</em></p>
-      <ul>
-        <li>Developed 20+ REST APIs using Spring Boot & Spring Cloud in a fintech microservices environment.</li>
-        <li>Migrated Groovy services to Java for performance and maintainability.</li>
-        <li>Implemented HazelCast caching, Kafka messaging, Swagger docs, and JUnit tests.</li>
-      </ul>
+<!-- ============ HERO ============ -->
+<section id="hero">
+  <svg class="skyline" viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="skyFade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0a0d1c" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#05060d" stop-opacity="1"/>
+      </linearGradient>
+    </defs>
+    <polygon points="0,300 0,160 60,150 90,180 140,120 180,170 230,140 260,190 320,150 360,190 420,130 460,180 520,160 560,200 620,150 680,190 740,140 800,180 860,155 920,195 980,150 1040,185 1100,145 1160,180 1220,150 1280,190 1340,160 1440,200 1440,300" fill="#0d1226" opacity="0.85"/>
+    <polygon points="0,300 0,210 50,220 90,190 130,225 190,200 240,230 300,205 350,235 410,215 470,240 520,220 580,245 640,225 700,250 760,230 820,255 880,235 940,258 1000,238 1060,260 1120,240 1180,262 1240,245 1300,265 1360,248 1440,268 1440,300" fill="#080a17"/>
+    <g fill="#f5c56b" opacity="0.55">
+      <rect x="75" y="165" width="3" height="4"/><rect x="150" y="140" width="3" height="4"/>
+      <rect x="270" y="160" width="3" height="4"/><rect x="380" y="150" width="3" height="4"/>
+      <rect x="500" y="175" width="3" height="4"/><rect x="640" y="165" width="3" height="4"/>
+      <rect x="760" y="155" width="3" height="4"/><rect x="900" y="170" width="3" height="4"/>
+      <rect x="1050" y="160" width="3" height="4"/><rect x="1200" y="165" width="3" height="4"/>
+    </g>
+    <rect x="0" y="0" width="1440" height="300" fill="url(#skyFade)"/>
+  </svg>
+
+  <div class="hero-eyebrow">第一話 · ORIGIN STORY</div>
+  <div class="hero-hello">Hello, I'm</div>
+  <h1 id="hero-name"></h1>
+  <div class="hero-role">Java Backend Developer <span class="accent">·</span> Fintech &amp; Banking Systems</div>
+  <div id="hero-typing"><span id="hero-typing-text"></span><span class="caret"></span></div>
+  <a href="#profile" class="cta-btn">Start My Journey <span>→</span></a>
+
+  <div class="scroll-hint"><span>SCROLL</span><div class="stick"></div></div>
+</section>
+
+<!-- ============ PROFILE ============ -->
+<section id="profile" class="section">
+  <div class="chapter reveal"><span class="num">CH. 01</span><span class="jp">起源 — Origin</span><div class="line"></div></div>
+  <h2 class="section-title reveal">Character Profile</h2>
+  <p class="section-sub reveal">The stats behind the developer.</p>
+
+  <div class="profile-grid">
+    <div class="reveal-scale">
+      <div class="avatar-wrap">
+        <div class="avatar-glow"></div>
+        <div class="avatar-ring"></div>
+        <div class="avatar-core">NG</div>
+      </div>
+      <div class="avatar-tag">NAVEEN KUMAR GORAKALA<br>Mumbai, Maharashtra</div>
+    </div>
+    <div class="summary-lines">
+      <p class="reveal">A <strong>Java Backend Developer</strong> with <span class="hl">3+ years</span> of hands-on experience across Java, Spring, Hibernate, REST web services, and SQL — building and maintaining backend services for <strong>fintech and banking platforms.</strong></p>
+      <p class="reveal">Practical depth in <span class="hl">Spring Boot microservices</span>, <span class="hl">Apache Kafka</span> event-driven architecture, <span class="hl">Redis &amp; Hazelcast</span> caching, and <span class="hl">Oracle / MongoDB</span> optimization — with a consistent track record of improving API performance, system reliability, and production support outcomes.</p>
+      <p class="reveal">Writes unit tests with <strong>JUnit and Mockito</strong>, and applies AI-assisted development workflows — using <strong>ChatGPT</strong> to automate GitLab ticket-to-configuration logic generation and <strong>GitHub Copilot</strong> for code review and issue identification — alongside Git, GitLab, Docker, Swagger, and Postman.</p>
+      <p class="reveal">Comfortable collaborating with architects, tech leads, and business teams to solve problems in live enterprise environments — grounded in strong computer science fundamentals from a <strong>B.Tech in Computer Science and Engineering.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section id="timeline" class="section">
+  <div class="chapter reveal"><span class="num">CH. 02</span><span class="jp">旅路 — The Journey</span><div class="line"></div></div>
+  <h2 class="section-title reveal">Professional Timeline</h2>
+  <p class="section-sub reveal">Every arc, exactly as it happened.</p>
+
+  <div class="timeline" id="timelineEl">
+    <div class="timeline-line"></div>
+    <div class="timeline-progress" id="timelineProgress"></div>
+
+    <div class="tl-item">
+      <div class="tl-card glass reveal-l">
+        <div class="tl-role">Software Developer</div>
+        <div class="tl-company">Perfios Solutions Pvt. Ltd.</div>
+        <div class="tl-meta"><span>Oct 2023 – Present</span><span>Mumbai, India</span><span>Current Arc</span></div>
+        <ul class="tl-list">
+          <li>Led development and maintenance of 20+ Spring Boot microservices powering fintech and loan-processing platforms.</li>
+          <li>Owned REST API design and lifecycle across admin, branch, and web platforms handling high transaction volumes.</li>
+          <li>Improved high-frequency data access performance by 25% by architecting a Hazelcast distributed caching layer.</li>
+          <li>Implemented Redis as a Hibernate second-level cache and via Spring Cache to reduce redundant database calls.</li>
+          <li>Built a ChatGPT-integrated automation connecting GitLab ticket creation to configuration logic generation.</li>
+          <li>Used GitHub Copilot for code review and issue identification, shortening review cycles across microservices.</li>
+          <li>Wrote unit tests using JUnit and Mockito to validate business logic and reduce regressions.</li>
+          <li>Deployed and released services via CI/CD pipelines on GitLab for consistent production delivery.</li>
+          <li>Modernized 10+ legacy Groovy services by migrating to Java 11, reducing technical debt.</li>
+          <li>Implemented Kafka-based event-driven, asynchronous communication to decouple services.</li>
+          <li>Reduced production incident troubleshooting time by ~40% via structured Log4J logging frameworks.</li>
+          <li>Refactored core business logic using Java 8 Streams and Lambda expressions.</li>
+          <li>Built centralized validation and exception-handling frameworks to strengthen API consistency.</li>
+          <li>Tuned Oracle SQL queries, indexing, and MongoDB access patterns for high-volume banking workflows.</li>
+          <li>Drove root cause analysis of critical production incidents in a live, regulated banking environment.</li>
+        </ul>
+        <div class="tl-tags"><span>Java</span><span>Spring Boot</span><span>Kafka</span><span>Hazelcast</span><span>Redis</span><span>Oracle DB</span><span>MongoDB</span><span>Groovy</span><span>CI/CD</span></div>
+      </div>
     </div>
 
-    <div class="experience">
-      <h3>Software Engineer Fellowship – BridgeLabz, Mumbai</h3>
-      <p><em>Feb 2023 – Oct 2023</em></p>
-      <ul>
-        <li>Developed full-stack web applications using Angular for the frontend and Spring Boot for the
-backend, including a User Management System and Employee Payroll System.</li>
-        <li>Managed Tomcat server deployments and optimized JPA queries.</li>
-      </ul>
+    <div class="tl-item">
+      <div class="tl-card glass reveal-r">
+        <div class="tl-role">Software Engineer Intern</div>
+        <div class="tl-company">BridgeLabz Solutions</div>
+        <div class="tl-meta"><span>Feb 2023 – Oct 2023</span><span>Mumbai, India</span><span>Origin Arc</span></div>
+        <ul class="tl-list">
+          <li>Contributed to backend feature development using Spring Boot within an Agile/Scrum environment.</li>
+          <li>Designed and implemented REST APIs for CRUD and core business operations using clean controller-service-repository separation.</li>
+          <li>Improved database interaction efficiency by 20% through Spring Data JPA query refinement and repository optimization.</li>
+          <li>Collaborated with cross-functional teams to deliver end-to-end backend functionality for enterprise web platforms.</li>
+          <li>Contributed to debugging, testing, and code refinement, improving application stability and sprint delivery quality.</li>
+        </ul>
+        <div class="tl-tags"><span>Spring Boot</span><span>Spring Data JPA</span><span>REST APIs</span><span>Agile/Scrum</span></div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="projects">
-    <h2>Selected Projects</h2>
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="section">
+  <div class="chapter reveal"><span class="num">CH. 03</span><span class="jp">能力 — Abilities</span><div class="line"></div></div>
+  <h2 class="section-title reveal">Skill Tree</h2>
+  <p class="section-sub reveal">Unlocked through real production work — dates, not guesses.</p>
 
-    <div class="project">
-      <h3>Loan Management System – Bank of India</h3>
-      <p><em>Oct 2023 – Present</em></p>
-      <p><strong>Tech Stack:</strong> Spring Boot, Spring Cloud, HazelCast, Kafka, OracleDB</p>
-      <ul>
-        <li>Designed scalable services for loan processing, reducing turnaround time by 30%.</li>
-        <li>Optimized database interactions with Oracle DB & JPA, applied responsive design for multi-device usability, and ensured code reliability through JUnit testing.</li>
-      </ul>
+  <div class="skill-tier-label reveal">Core Stack — since Feb 2023 (3+ yrs)</div>
+  <div class="skill-grid" id="skillGridCore"></div>
+
+  <div class="skill-tier-label reveal">Production Stack — since Oct 2023</div>
+  <div class="skill-grid" id="skillGridProd"></div>
+
+  <div class="skill-tier-label reveal">AI-Assisted Workflow</div>
+  <div class="skill-grid" id="skillGridAI"></div>
+</section>
+
+<!-- ============ PROJECT ============ -->
+<section id="project" class="section">
+  <div class="chapter reveal"><span class="num">CH. 04</span><span class="jp">任務 — The Mission</span><div class="line"></div></div>
+  <h2 class="section-title reveal">Field Mission</h2>
+  <p class="section-sub reveal">The flagship engagement from the resume — presented in full.</p>
+
+  <div class="mission-card glass reveal">
+    <div class="mission-head">
+      <div>
+        <span class="mission-badge">BANKING · LIVE PRODUCTION</span>
+        <div class="mission-title">Loan Management System</div>
+        <div class="mission-sub">Client: Bank of India</div>
+      </div>
     </div>
-
-    <div class="project">
-      <h3>BookStore E-commerce App</h3>
-      <p><em>Feb 2023 – Oct 2023</em></p>
-      <p><strong>Tech Stack:</strong> Spring Boot (Backend), Angular (Frontend)</p>
-      <ul>
-        <li>Developed secure login, book search, and order placement modules.</li>
-        <li>Delivered a responsive and scalable e-commerce platform.</li>
-      </ul>
+    <div class="mission-body">
+      <div class="mission-block">
+        <h4>Overview</h4>
+        <p>Distributed microservices platform supporting high-volume loan-processing workflows — Gold Loan, KCC, Mudra, Personal Loan, and Home Loan — used simultaneously by admin, branch operations, and customer-facing portals in a regulated banking environment.</p>
+      </div>
+      <div class="mission-block">
+        <h4>Architecture</h4>
+        <p>Spring Boot / Spring Cloud microservices with Kafka-driven asynchronous messaging, Hazelcast distributed caching, and dual persistence across Oracle DB and MongoDB, documented via Swagger for cross-team integration.</p>
+      </div>
+      <div class="mission-block">
+        <h4>Responsibilities</h4>
+        <ul>
+          <li>Built and supported distributed microservices for multiple loan product lines.</li>
+          <li>Integrated third-party verification services — PAN verification, secure identity systems, and Equifax/CIBIL credit bureau platforms.</li>
+          <li>Resolved 10+ critical production issues through log analysis, debugging, and root-cause identification.</li>
+        </ul>
+      </div>
+      <div class="mission-block">
+        <h4>Challenges</h4>
+        <p>Coordinating secure, high-volume onboarding across multiple third-party verification and credit bureau integrations, while maintaining reliability across five distinct loan-processing workflows in a live regulated environment.</p>
+      </div>
+      <div class="mission-block" style="grid-column:1/-1;">
+        <h4>Tech Stack</h4>
+        <div class="mission-tech"><span>Java</span><span>Spring Boot</span><span>Spring Cloud</span><span>Microservices</span><span>Kafka</span><span>Oracle DB</span><span>MongoDB</span><span>Hazelcast</span><span>REST APIs</span><span>Swagger</span></div>
+      </div>
+      <div class="mission-impact">
+        <h4 style="margin-bottom:6px;">Impact</h4>
+        <p>Strengthened secure system design and streamlined onboarding workflows, improving reliability and efficiency of integration-driven loan processing across high transaction volumes.</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <p><strong>B.Tech in Computer Science</strong><br>
-       Avanthi Institute of Engineering & Technology (2018 – 2022)</p>
-  </section>
+<!-- ============ ACHIEVEMENTS ============ -->
+<section id="achievements" class="section">
+  <div class="chapter reveal"><span class="num">CH. 05</span><span class="jp">証 — Proof</span><div class="line"></div></div>
+  <h2 class="section-title reveal">Achievements Unlocked</h2>
+  <p class="section-sub reveal">Badges earned in production, not tutorials.</p>
+  <div class="badge-grid" id="badgeGrid"></div>
+</section>
 
-  <footer>
-    <h2>Let's Connect</h2>
-    <div class="connect-links">
-      <a href="mailto:naveengorakala814@gmail.com"><i class="fas fa-envelope"></i>Email</a>
-      <a href="tel:+916302387348"><i class="fas fa-phone"></i>Call</a>
-      <a href="https://github.com/YOUR_GITHUB" target="_blank"><i class="fab fa-github"></i>GitHub</a>
-      <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+<!-- ============ TECH UNIVERSE ============ -->
+<section id="universe" class="section">
+  <div class="chapter reveal"><span class="num">CH. 06</span><span class="jp">宇宙 — The Universe</span><div class="line"></div></div>
+  <h2 class="section-title reveal">Tech Constellation</h2>
+  <p class="section-sub reveal">Click a star to read its story.</p>
+  <div id="constellation-wrap" class="reveal">
+    <svg id="constellation" viewBox="0 0 800 560"></svg>
+    <div id="tech-info" class="glass">
+      <h4 id="tiName">—</h4>
+      <p id="tiDesc">Click any star in the constellation.</p>
+      <div class="ti-meta" id="tiMeta"></div>
     </div>
-    <p class="copyright">© 2025 Gorakala Naveen Kumar | Portfolio</p>
-  </footer>
+  </div>
+</section>
 
+<!-- ============ COUNTERS ============ -->
+<section id="stats" class="section">
+  <div class="chapter reveal"><span class="num">CH. 07</span><span class="jp">記録 — The Record</span><div class="line"></div></div>
+  <h2 class="section-title reveal">Power Level</h2>
+  <p class="section-sub reveal">Measured in production impact.</p>
+  <div class="counter-grid" id="counterGrid"></div>
+</section>
+
+<!-- ============ WHY HIRE ============ -->
+<section id="hire" class="section">
+  <div class="chapter reveal"><span class="num">CH. 08</span><span class="jp">誓 — The Pledge</span><div class="line"></div></div>
+  <h2 class="section-title reveal">Why Hire Me</h2>
+  <p class="section-sub reveal">Six reasons, straight from the field.</p>
+  <div class="why-grid" id="whyGrid"></div>
+</section>
+
+<!-- ============ RESUME ============ -->
+<section id="resume" class="section">
+  <div class="chapter reveal"><span class="num">CH. 09</span><span class="jp">書 — The Record Sealed</span><div class="line"></div></div>
+  <h2 class="section-title reveal" style="text-align:center;">Full Dossier</h2>
+  <div class="resume-card glass reveal">
+    <h3>Naveen Kumar Gorakala</h3>
+    <p>naveengorakala814@gmail.com &nbsp;·&nbsp; +91 79951 85400 &nbsp;·&nbsp; Mumbai, Maharashtra</p>
+    <div class="resume-actions">
+      <a href="mailto:naveengorakala814@gmail.com" class="rbtn primary">✉ Email Me</a>
+      <a href="tel:+917995185400" class="rbtn">☎ Call</a>
+      <a href="#" class="rbtn placeholder" title="Add your resume PDF link">📄 Download Resume <span class="tag">https://github.com/naveenkumargorakala/portfolio/blob/portfolio_base/Naveen_resume.pdf</span></a>
+      <a href="#" class="rbtn placeholder" title="Add your LinkedIn URL">LinkedIn <span class="tag">https://www.linkedin.com/in/naveengorakala/</span></a>
+      <a href="#" class="rbtn placeholder" title="Add your GitHub URL">GitHub <span class="tag">https://github.com/naveenkumargorakala</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL ============ -->
+<section id="final">
+  <div class="hero-eyebrow reveal">最終話 · FINALE</div>
+  <p class="final-quote reveal">Every great developer starts with <span class="hl">one line of code.</span><br>This is only the <span class="hl">beginning.</span></p>
+  <p class="final-sub reveal">— Naveen Kumar Gorakala</p>
+  <div class="tbc reveal-scale">To Be Continued...</div>
+  <div class="credits reveal">
+    <div><b>Directed &amp; Engineered by</b> — Naveen Kumar Gorakala</div>
+    <div><b>Domain</b> — Fintech, Banking &amp; Loan-Processing Systems</div>
+    <div><b>Powers</b> — Java · Spring Boot · Microservices · Kafka</div>
+    <div><b>Education</b> — B.Tech CSE, Avanthi Institute of Engineering and Technology, 2022</div>
+  </div>
+</section>
+
+<footer>© <span id="year"></span> Naveen Kumar Gorakala — Built as an interactive story, not just a page.</footer>
+
+</main>
+
+<script>
+/* ================= DATA (verbatim from resume — do not invent) ================= */
+const CORE_SKILLS = [
+  {name:'Java', since:'Feb 2023', pct:100},
+  {name:'SQL', since:'Feb 2023', pct:95},
+  {name:'Spring / Spring Boot', since:'Feb 2023', pct:100},
+  {name:'Spring MVC', since:'Feb 2023', pct:90},
+  {name:'Spring Data JPA', since:'Feb 2023', pct:92},
+  {name:'Hibernate', since:'Feb 2023', pct:90},
+  {name:'REST Web Services', since:'Feb 2023', pct:100},
+  {name:'Git / GitLab', since:'Feb 2023', pct:95},
+  {name:'JUnit / Mockito', since:'Feb 2023', pct:88},
+];
+const PROD_SKILLS = [
+  {name:'Spring Cloud', since:'Oct 2023', pct:85},
+  {name:'Microservices', since:'Oct 2023', pct:95},
+  {name:'Apache Kafka', since:'Oct 2023', pct:90},
+  {name:'Redis', since:'Oct 2023', pct:85},
+  {name:'Hazelcast', since:'Oct 2023', pct:88},
+  {name:'Oracle DB', since:'Oct 2023', pct:90},
+  {name:'MongoDB', since:'Oct 2023', pct:80},
+  {name:'Docker', since:'Oct 2023', pct:78},
+  {name:'Swagger / Postman', since:'Oct 2023', pct:85},
+  {name:'Gradle', since:'Oct 2023', pct:75},
+  {name:'AWS', since:'Oct 2023', pct:70},
+  {name:'CI/CD (GitLab Pipelines)', since:'Oct 2023', pct:82},
+  {name:'Groovy', since:'Oct 2023', pct:70},
+  {name:'Log4J', since:'Oct 2023', pct:80},
+];
+const AI_SKILLS = [
+  {name:'ChatGPT (workflow automation)', since:'Oct 2023', pct:85},
+  {name:'GitHub Copilot (code review)', since:'Oct 2023', pct:85},
+];
+
+const BADGES = [
+  {icon:'⚙',title:'20+ Microservices',desc:'Led development at Perfios'},
+  {icon:'🔗',title:'REST API Lifecycle',desc:'Owned end to end'},
+  {icon:'⚡',title:'+25% Latency Win',desc:'Hazelcast caching layer'},
+  {icon:'🗄',title:'Redis Caching',desc:'Hibernate 2nd-level + Spring Cache'},
+  {icon:'🤖',title:'ChatGPT Automation',desc:'GitLab ticket → config logic'},
+  {icon:'👁',title:'Copilot Reviews',desc:'Faster, cleaner code cycles'},
+  {icon:'🧪',title:'JUnit + Mockito',desc:'Reliable service-layer tests'},
+  {icon:'🚀',title:'CI/CD Deployments',desc:'GitLab pipelines to production'},
+  {icon:'🔄',title:'10+ Services Migrated',desc:'Groovy → Java 11'},
+  {icon:'📡',title:'Kafka Event-Driven',desc:'Decoupled async workflows'},
+  {icon:'⏱',title:'-40% Incident Time',desc:'Structured Log4J diagnostics'},
+  {icon:'🏦',title:'Banking Domain',desc:'Live regulated environment RCA'},
+];
+
+const COUNTERS = [
+  {n:3,suffix:'+',label:'Years Experience'},
+  {n:20,suffix:'+',label:'Microservices Built'},
+  {n:10,suffix:'+',label:'Legacy Services Modernized'},
+  {n:10,suffix:'+',label:'Production Issues Resolved'},
+  {n:25,suffix:'%',label:'Latency Improved'},
+  {n:20,suffix:'%',label:'DB Efficiency Improved'},
+  {n:40,suffix:'%',label:'Incident Time Reduced'},
+];
+
+const WHY = [
+  {icon:'🧩',title:'Problem Solver',desc:'Drives root-cause analysis on critical production incidents in a live, regulated banking environment.'},
+  {icon:'☕',title:'Backend Expert',desc:'3+ years deep in Java, Spring Boot, and microservices powering real fintech infrastructure.'},
+  {icon:'🧹',title:'Clean Code',desc:'Applies SOLID principles, design patterns, and centralized exception handling across services.'},
+  {icon:'🔌',title:'API Development',desc:'Owns REST API design and lifecycle across admin, branch, and customer-facing platforms.'},
+  {icon:'📈',title:'Fast Learner',desc:'Went from B.Tech graduate to owning 20+ production microservices in banking within 3 years.'},
+  {icon:'🤝',title:'Team Player',desc:'Collaborates daily with architects, tech leads, and business stakeholders to ship features.'},
+];
+
+const TECH_NODES = [
+  {name:'Java',desc:'Primary language — 3+ years, core to every service shipped.',meta:'Since Feb 2023'},
+  {name:'Spring Boot',desc:'Framework of choice for 20+ microservices in production.',meta:'Since Feb 2023'},
+  {name:'Kafka',desc:'Event-driven, asynchronous communication decoupling services.',meta:'Since Oct 2023'},
+  {name:'Hazelcast',desc:'Distributed caching layer — cut API latency by 25%.',meta:'Since Oct 2023'},
+  {name:'Redis',desc:'Hibernate 2nd-level cache + Spring Cache for read-heavy paths.',meta:'Since Oct 2023'},
+  {name:'Oracle DB',desc:'Query tuning and indexing for high-transaction banking workflows.',meta:'Since Oct 2023'},
+  {name:'MongoDB',desc:'Access pattern optimization alongside Oracle DB.',meta:'Since Oct 2023'},
+  {name:'Docker',desc:'Containerized services for consistent deployment.',meta:'Since Oct 2023'},
+  {name:'AWS',desc:'Cloud infrastructure supporting production workloads.',meta:'Since Oct 2023'},
+  {name:'Microservices',desc:'Architectural backbone of the Loan Management System.',meta:'Core specialty'},
+  {name:'REST APIs',desc:'Designed and owned lifecycle across multiple platforms.',meta:'Since Feb 2023'},
+  {name:'GitLab CI/CD',desc:'Pipelines powering consistent, repeatable production releases.',meta:'Since Oct 2023'},
+];
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ================= HERO letter animation ================= */
+(function(){
+  const name = "Naveen Kumar Gorakala";
+  const el = document.getElementById('hero-name');
+  let delay = 0;
+  [...name].forEach((ch)=>{
+    const span = document.createElement('span');
+    span.className = 'ch';
+    span.textContent = ch === ' ' ? '\u00A0' : ch;
+    span.style.animationDelay = (0.5 + delay*0.045) + 's';
+    el.appendChild(span);
+    delay++;
+  });
+})();
+
+/* ================= HERO typing effect ================= */
+(function(){
+  const words = ['Java','Spring Boot','Microservices','Apache Kafka','SQL & Oracle DB'];
+  const target = document.getElementById('hero-typing-text');
+  let wi=0, ci=0, deleting=false;
+  function tick(){
+    const w = words[wi];
+    if(!deleting){
+      ci++;
+      target.textContent = w.slice(0,ci);
+      if(ci===w.length){ deleting=true; setTimeout(tick,1200); return; }
+    } else {
+      ci--;
+      target.textContent = w.slice(0,ci);
+      if(ci===0){ deleting=false; wi=(wi+1)%words.length; }
+    }
+    setTimeout(tick, deleting ? 40 : 85);
+  }
+  setTimeout(tick, 2000);
+})();
+
+/* ================= Scroll reveal ================= */
+const revealEls = document.querySelectorAll('.reveal, .reveal-l, .reveal-r, .reveal-scale');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('in'); }
+  });
+},{threshold:0.15});
+revealEls.forEach(el=>io.observe(el));
+
+/* ================= Timeline scroll progress ================= */
+const tlEl = document.getElementById('timelineEl');
+const tlProgress = document.getElementById('timelineProgress');
+function updateTimeline(){
+  const rect = tlEl.getBoundingClientRect();
+  const vh = window.innerHeight;
+  const total = rect.height;
+  let progressed = vh*0.6 - rect.top;
+  progressed = Math.max(0, Math.min(total, progressed));
+  tlProgress.style.height = progressed + 'px';
+}
+window.addEventListener('scroll', updateTimeline, {passive:true});
+
+/* ================= Skill cards build + unlock ================= */
+function buildSkillGrid(containerId, list){
+  const c = document.getElementById(containerId);
+  list.forEach(s=>{
+    const card = document.createElement('div');
+    card.className = 'skill-card glass locked reveal-scale';
+    card.style.setProperty('--pct', s.pct+'%');
+    card.innerHTML = `<div class="skill-head"><span class="skill-name">${s.name}</span><span class="skill-since">${s.since}</span></div><div class="skill-bar-track"><div class="skill-bar-fill"></div></div>`;
+    c.appendChild(card);
+  });
+}
+buildSkillGrid('skillGridCore', CORE_SKILLS);
+buildSkillGrid('skillGridProd', PROD_SKILLS);
+buildSkillGrid('skillGridAI', AI_SKILLS);
+
+const skillIO = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      setTimeout(()=>e.target.classList.replace('locked','unlocked'), 150);
+      skillIO.unobserve(e.target);
+    }
+  });
+},{threshold:0.3});
+document.querySelectorAll('.skill-card').forEach(el=>skillIO.observe(el));
+
+/* ================= Badges build + burst ================= */
+(function(){
+  const grid = document.getElementById('badgeGrid');
+  BADGES.forEach(b=>{
+    const el = document.createElement('div');
+    el.className = 'badge glass reveal-scale';
+    el.innerHTML = `<div class="badge-icon">${b.icon}</div><div class="badge-title">${b.title}</div><div class="badge-desc">${b.desc}</div>`;
+    grid.appendChild(el);
+  });
+  const bIO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in','burst');
+        bIO.unobserve(e.target);
+      }
+    });
+  },{threshold:0.4});
+  document.querySelectorAll('.badge').forEach(el=>bIO.observe(el));
+})();
+
+/* ================= Counters build + count-up ================= */
+(function(){
+  const grid = document.getElementById('counterGrid');
+  COUNTERS.forEach(c=>{
+    const el = document.createElement('div');
+    el.className = 'counter-card glass reveal-scale';
+    el.innerHTML = `<div class="counter-num" data-target="${c.n}" data-suffix="${c.suffix}">0${c.suffix}</div><div class="counter-label">${c.label}</div>`;
+    grid.appendChild(el);
+  });
+  const cIO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        const numEl = e.target.querySelector('.counter-num');
+        if(numEl && !numEl.dataset.done){
+          numEl.dataset.done = '1';
+          const target = parseInt(numEl.dataset.target,10);
+          const suffix = numEl.dataset.suffix;
+          let cur = 0;
+          const dur = 1400;
+          const start = performance.now();
+          function step(t){
+            const p = Math.min(1,(t-start)/dur);
+            const eased = 1-Math.pow(1-p,3);
+            cur = Math.round(target*eased);
+            numEl.textContent = cur+suffix;
+            if(p<1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+        cIO.unobserve(e.target);
+      }
+    });
+  },{threshold:0.4});
+  document.querySelectorAll('.counter-card').forEach(el=>cIO.observe(el));
+})();
+
+/* ================= Why grid build ================= */
+(function(){
+  const grid = document.getElementById('whyGrid');
+  WHY.forEach(w=>{
+    const el = document.createElement('div');
+    el.className = 'why-card glass reveal-scale';
+    el.innerHTML = `<div class="why-icon">${w.icon}</div><div class="why-title">${w.title}</div><div class="why-desc">${w.desc}</div>`;
+    grid.appendChild(el);
+  });
+  const wIO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); wIO.unobserve(e.target);} });
+  },{threshold:0.2});
+  document.querySelectorAll('.why-card').forEach(el=>wIO.observe(el));
+})();
+
+/* ================= Constellation ================= */
+(function(){
+  const svg = document.getElementById('constellation');
+  const W=800,H=560;
+  const cx=W/2, cy=H/2;
+  const positions = [];
+  const n = TECH_NODES.length;
+  for(let i=0;i<n;i++){
+    const angle = (i/n)*Math.PI*2;
+    const radiusVariance = (i%2===0)? 210: 160;
+    const r = radiusVariance;
+    positions.push({x:cx+Math.cos(angle)*r, y:cy+Math.sin(angle)*r});
+  }
+  // connecting lines to center
+  let linesHTML = '';
+  positions.forEach(p=>{
+    linesHTML += `<line x1="${cx}" y1="${cy}" x2="${p.x}" y2="${p.y}" stroke="rgba(140,160,255,0.14)" stroke-width="1"/>`;
+  });
+  // core node
+  let nodesHTML = `<circle cx="${cx}" cy="${cy}" r="26" fill="url(#coreGrad)" />
+    <text x="${cx}" y="${cy+4}" text-anchor="middle" font-family="Rajdhani" font-weight="700" font-size="13" fill="#05060d">NAVEEN</text>`;
+  TECH_NODES.forEach((t,i)=>{
+    const p = positions[i];
+    nodesHTML += `<g class="star-node" data-i="${i}" transform="translate(${p.x},${p.y})">
+      <circle r="9" fill="#0e1226" stroke="#4fd1ff" stroke-width="1.5"/>
+      <circle r="2.4" fill="#4fd1ff"/>
+      <text class="star-label" y="22" text-anchor="middle">${t.name}</text>
+    </g>`;
+  });
+  svg.innerHTML = `<defs>
+      <radialGradient id="coreGrad" cx="35%" cy="30%" r="70%">
+        <stop offset="0%" stop-color="#9d6bff"/><stop offset="100%" stop-color="#4fd1ff"/>
+      </radialGradient>
+    </defs>${linesHTML}${nodesHTML}`;
+
+  const tiName = document.getElementById('tiName');
+  const tiDesc = document.getElementById('tiDesc');
+  const tiMeta = document.getElementById('tiMeta');
+  const tiBox = document.getElementById('tech-info');
+
+  svg.querySelectorAll('.star-node').forEach(node=>{
+    node.addEventListener('click', ()=>{
+      const i = parseInt(node.getAttribute('data-i'),10);
+      const t = TECH_NODES[i];
+      tiName.textContent = t.name;
+      tiDesc.textContent = t.desc;
+      tiMeta.textContent = t.meta;
+      tiBox.classList.add('show');
+    });
+  });
+})();
+
+/* ================= HUD progress + chapter + navdots ================= */
+const sections = ['hero','profile','timeline','skills','project','achievements','universe','stats','hire','resume'];
+const hudRing = document.getElementById('hudRingFill');
+const hudPct = document.getElementById('hudPct');
+const hudChapter = document.getElementById('hudChapter');
+const CIRC = 150.8;
+function updateHud(){
+  const doc = document.documentElement;
+  const scrollTop = doc.scrollTop || document.body.scrollTop;
+  const scrollH = doc.scrollHeight - doc.clientHeight;
+  const pct = scrollH>0 ? Math.min(100, Math.round((scrollTop/scrollH)*100)) : 0;
+  hudRing.style.strokeDashoffset = CIRC - (CIRC*pct/100);
+  hudPct.textContent = pct+'%';
+
+  let activeIdx = 0;
+  sections.forEach((id,idx)=>{
+    const el = document.getElementById(id);
+    if(el){
+      const r = el.getBoundingClientRect();
+      if(r.top < window.innerHeight*0.5) activeIdx = idx;
+    }
+  });
+  hudChapter.textContent = String(activeIdx+1).padStart(2,'0');
+  document.querySelectorAll('.navdot').forEach((d,idx)=>{
+    d.classList.toggle('active', idx===activeIdx);
+  });
+}
+window.addEventListener('scroll', updateHud, {passive:true});
+updateHud();
+
+/* ================= Music toggle (visual only) ================= */
+document.getElementById('music-toggle').addEventListener('click', function(){
+  this.classList.toggle('on');
+});
+
+/* ================= Canvas: Stars ================= */
+(function(){
+  const canvas = document.getElementById('bg-stars');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+  function resize(){
+    canvas.width = window.innerWidth;
+    canvas.height = document.documentElement.scrollHeight;
+    stars = [];
+    const count = Math.floor((canvas.width*canvas.height)/9000);
+    for(let i=0;i<Math.min(count,500);i++){
+      stars.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*1.4+0.3,
+        tw:Math.random()*Math.PI*2,
+        speed:Math.random()*0.02+0.005
+      });
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    stars.forEach(s=>{
+      s.tw += s.speed;
+      const alpha = 0.4 + Math.sin(s.tw)*0.4;
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(200,220,255,${Math.max(0,alpha)})`;
+      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', resize);
+  resize(); draw();
+  setTimeout(resize, 800); // catch late layout shifts
+})();
+
+/* ================= Canvas: floating particles (mouse-reactive) ================= */
+(function(){
+  const canvas = document.getElementById('bg-particles');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let mouse = {x:-9999,y:-9999};
+  function resize(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  function init(){
+    particles = [];
+    const count = window.innerWidth < 700 ? 26 : 55;
+    for(let i=0;i<count;i++){
+      particles.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2+0.6,
+        vx:(Math.random()-0.5)*0.25,
+        vy:(Math.random()-0.5)*0.25,
+        hue: Math.random()>0.5 ? '79,209,255' : '157,107,255'
+      });
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+      const dx = mouse.x-p.x, dy = mouse.y-p.y;
+      const dist = Math.sqrt(dx*dx+dy*dy);
+      if(dist<140){
+        p.x -= dx*0.004; p.y -= dy*0.004;
+      }
+      p.x += p.vx; p.y += p.vy;
+      if(p.x<0)p.x=canvas.width; if(p.x>canvas.width)p.x=0;
+      if(p.y<0)p.y=canvas.height; if(p.y>canvas.height)p.y=0;
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(${p.hue},0.55)`;
+      ctx.shadowBlur = 6;
+      ctx.shadowColor = `rgba(${p.hue},0.8)`;
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', ()=>{resize();init();});
+  window.addEventListener('mousemove', e=>{mouse.x=e.clientX;mouse.y=e.clientY;});
+  resize(); init(); draw();
+})();
+
+/* ================= Canvas: sakura petals ================= */
+(function(){
+  const canvas = document.getElementById('bg-sakura');
+  const ctx = canvas.getContext('2d');
+  let petals = [];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  function init(){
+    petals = [];
+    const count = window.innerWidth < 700 ? 10 : 22;
+    for(let i=0;i<count;i++){
+      petals.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        size:Math.random()*6+4,
+        speedY:Math.random()*0.5+0.3,
+        speedX:Math.random()*0.6-0.3,
+        rot:Math.random()*Math.PI*2,
+        rotSpeed:(Math.random()-0.5)*0.02,
+        sway:Math.random()*Math.PI*2
+      });
+    }
+  }
+  function drawPetal(p){
+    ctx.save();
+    ctx.translate(p.x,p.y);
+    ctx.rotate(p.rot);
+    ctx.beginPath();
+    ctx.fillStyle = 'rgba(255,183,213,0.55)';
+    ctx.ellipse(0,0,p.size,p.size*0.6,0,0,Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    petals.forEach(p=>{
+      p.sway += 0.01;
+      p.y += p.speedY;
+      p.x += p.speedX + Math.sin(p.sway)*0.4;
+      p.rot += p.rotSpeed;
+      if(p.y>canvas.height+10){ p.y=-10; p.x=Math.random()*canvas.width; }
+      if(p.x>canvas.width+10) p.x=-10;
+      if(p.x<-10) p.x=canvas.width+10;
+      drawPetal(p);
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', ()=>{resize();init();});
+  resize(); init(); draw();
+})();
+</script>
 </body>
 </html>
-
