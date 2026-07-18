@@ -186,14 +186,21 @@ main{position:relative;z-index:3;}
   color:var(--mist-dim);letter-spacing:2px;margin-bottom:6px;
   opacity:0;animation:fadeUp 1s ease forwards 0.4s;
 }
+.hero-name-wrap{
+filter:drop-shadow(0 0 40px rgba(79,209,255,0.35));
+margin-bottom:20px;
+}
 #hero-name{
-  font-family:var(--font-display);font-weight:700;
-  font-size:clamp(44px,9vw,110px);
-  letter-spacing:1px;line-height:1;
-  background:linear-gradient(120deg,var(--white) 20%,var(--blue) 55%,var(--purple) 85%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 0 40px rgba(79,209,255,0.35));
-  margin-bottom:20px;
+font-family:var(--font-display);font-weight:700;
+font-size:clamp(44px,9vw,110px);
+letter-spacing:1px;line-height:1;
+color:var(--white);
+background:linear-gradient(120deg,var(--white) 20%,var(--blue) 55%,var(--purple) 85%);
+-webkit-background-clip:text;background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+@supports not ((-webkit-background-clip:text) or (background-clip:text)){
+#hero-name{ -webkit-text-fill-color:unset; background:none; color:var(--white); }
 }
 #hero-name .ch{display:inline-block;opacity:0;transform:translateY(40px) rotateX(-40deg);animation:letterIn 0.7s cubic-bezier(.2,.9,.3,1.2) forwards;}
 @keyframes letterIn{to{opacity:1;transform:translateY(0) rotateX(0);}}
@@ -538,7 +545,9 @@ footer{padding:40px 6vw 60px;text-align:center;font-family:var(--font-mono);font
 
   <div class="hero-eyebrow">ORIGIN STORY</div>
   <div class="hero-hello">Hello, I'm</div>
-  <h1 id="hero-name"></h1>
+  <div class="hero-name-wrap">
+  <h1 id="hero-name">Naveen Kumar Gorakala</h1>
+  </div>
   <div class="hero-role">Java Backend Developer <span class="accent">·</span> Fintech &amp; Banking Systems</div>
   <div id="hero-typing"><span id="hero-typing-text"></span><span class="caret"></span></div>
   <a href="#profile" class="cta-btn">Start My Journey <span>→</span></a>
@@ -609,16 +618,17 @@ footer{padding:40px 6vw 60px;text-align:center;font-family:var(--font-mono);font
     <div class="tl-item">
       <div class="tl-card glass reveal-r">
         <div class="tl-role">Software Engineer Intern</div>
-        <div class="tl-company">BridgeLabz Solutions</div>
-        <div class="tl-meta"><span>Feb 2023 – Oct 2023</span><span>Mumbai, India</span><span>Origin Arc</span></div>
-        <ul class="tl-list">
-          <li>Contributed to backend feature development using Spring Boot within an Agile/Scrum environment.</li>
-          <li>Designed and implemented REST APIs for CRUD and core business operations using clean controller-service-repository separation.</li>
-          <li>Improved database interaction efficiency by 20% through Spring Data JPA query refinement and repository optimization.</li>
-          <li>Collaborated with cross-functional teams to deliver end-to-end backend functionality for enterprise web platforms.</li>
-          <li>Contributed to debugging, testing, and code refinement, improving application stability and sprint delivery quality.</li>
-        </ul>
-        <div class="tl-tags"><span>Spring Boot</span><span>Spring Data JPA</span><span>REST APIs</span><span>Agile/Scrum</span></div>
+		<div class="tl-company">BridgeLabz Solutions</div>
+		<div class="tl-meta"><span>Feb 2023 – Oct 2023</span><span>Mumbai, India</span><span>Origin Arc</span></div>
+			<ul class="tl-list">
+				<li>Contributed to full-stack feature development using Angular and Spring Boot within an Agile/Scrum environment.</li>
+				<li>Built responsive Angular components and services to consume backend REST APIs for core business workflows.</li>
+				<li>Designed and implemented REST APIs for CRUD and core business operations using clean controller-service-repository separation.</li>
+				<li>Improved database interaction efficiency by 20% through Spring Data JPA query refinement and repository optimization.</li>
+				<li>Collaborated with cross-functional teams to deliver end-to-end functionality across Angular front-end and Spring Boot back-end.</li>
+				<li>Contributed to debugging, testing, and code refinement, improving application stability and sprint delivery quality.</li>
+			</ul>
+		<div class="tl-tags"><span>Angular</span><span>Spring Boot</span><span>Spring Data JPA</span><span>REST APIs</span><span>Agile/Scrum</span></div>
       </div>
     </div>
   </div>
@@ -848,17 +858,18 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 /* ================= HERO letter animation ================= */
 (function(){
-  const name = "Naveen Kumar Gorakala";
-  const el = document.getElementById('hero-name');
-  let delay = 0;
-  [...name].forEach((ch)=>{
-    const span = document.createElement('span');
-    span.className = 'ch';
-    span.textContent = ch === ' ' ? '\u00A0' : ch;
-    span.style.animationDelay = (0.5 + delay*0.045) + 's';
-    el.appendChild(span);
-    delay++;
-  });
+const el = document.getElementById('hero-name');
+const name = el.textContent; // read the real name straight out of the HTML
+el.textContent = ''; // clear it, then rebuild letter-by-letter for the animation
+let delay = 0;
+[...name].forEach((ch)=>{
+const span = document.createElement('span');
+span.className = 'ch';
+span.textContent = ch === ' ' ? '\u00A0' : ch;
+span.style.animationDelay = (0.5 + delay*0.045) + 's';
+el.appendChild(span);
+delay++;
+});
 })();
 
 /* ================= HERO typing effect ================= */
